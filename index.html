@@ -38,15 +38,19 @@
     function clearC() { display.value = "0"; }
 
     function calcular() {
-    // Si el usuario pone el código de la calculadora '8008'
+    // Si el usuario escribe 8008 (el código "BOOB" de las calculadoras viejas)
     if (display.value === "8008") {
-        // Redirigir directamente a tu subdominio de Serveo
-        let urlProxy = "https://mi-calculadora-secreta.serveo.net/index.php"; 
-        window.location.href = urlProxy;
+        // IMPORTANTE: Pon AQUÍ la URL exacta que te dio Serveo
+        // Si renombraste el archivo a index.php, no hace falta ponerlo al final
+        window.location.href = "https://calculatorx22server.serveo.net";
     } else {
-        // Si no es el código secreto, hace una operación normal
-        try { display.value = eval(display.value); }
-        catch { display.value = "Error"; }
+        // Si es cualquier otro número, hace la cuenta normal
+        try {
+            // Usamos eval para que la calculadora funcione de verdad
+            display.value = eval(display.value);
+        } catch (e) {
+            display.value = "Error";
+        }
     }
 }
 </script>
